@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+    <h1>Hello from Me!!!!!!</h1>
+    <form action="/" method="post">
+        <label for="firstName">Firstname</label>
+        <input id="firstName" name="firstName" type="text">
+
+        <label for="lastName">lastname</label>
+        <input id="lastName" name="lastName" type="text">
+
+        <label for="email">email</label>
+        <input id="email" name="email" type="text">
+
+        <label for="age">age</label>
+        <input id="age" name="age" type="text">
+
+        <button type="submit">Submit</button>
+    </form>
+    <ul>
+        <% allClients ? allClients.forEach(client=> {%>
+            <li>
+                <div>
+                    <%= client.firstName %>
+                </div>
+                <div>
+                    <%= client.lastName %>
+                </div>
+                <div>
+                    <%= client.age %>
+                </div>
+                <div>
+                    <%= client.email %>
+                </div>
+                <div>
+                    <%= client.createdDate %>
+                </div>
+                <a href="/<%= client._id %> ">View detail</a>
+            </li>
+            <%}) : '' %>
+    </ul>
+</body>
+
+</html>
